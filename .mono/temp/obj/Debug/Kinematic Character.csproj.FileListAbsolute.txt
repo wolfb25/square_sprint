@@ -1,0 +1,7 @@
+D:\Saját meghajtó\Godot\2d_kinematic_character_demo_cs\.mono\temp\bin\Debug\Kinematic Character.dll
+D:\Saját meghajtó\Godot\2d_kinematic_character_demo_cs\.mono\temp\bin\Debug\Kinematic Character.pdb
+D:\Saját meghajtó\Godot\2d_kinematic_character_demo_cs\.mono\temp\obj\Debug\Kinematic Character.csproj.AssemblyReference.cache
+D:\Saját meghajtó\Godot\2d_kinematic_character_demo_cs\.mono\temp\obj\Debug\Kinematic Character.GeneratedMSBuildEditorConfig.editorconfig
+D:\Saját meghajtó\Godot\2d_kinematic_character_demo_cs\.mono\temp\obj\Debug\Kinematic Character.csproj.CoreCompileInputs.cache
+D:\Saját meghajtó\Godot\2d_kinematic_character_demo_cs\.mono\temp\obj\Debug\Kinematic Character.dll
+D:\Saját meghajtó\Godot\2d_kinematic_character_demo_cs\.mono\temp\obj\Debug\Kinematic Character.pdb
