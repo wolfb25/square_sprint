@@ -78,5 +78,12 @@ public class Player : KinematicBody2D
         previousJumpPressed = jumping;
     }
 
+    public override void _Process(float delta)
+    {
+        if (onAirTime > JUMP_MAX_AIRBORNE_TIME) {
+            Rotation += 5 * delta;
+        }
+    }
+
 
 }
