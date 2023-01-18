@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/whitesquare.png" type="Texture" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 16, 16 )
+
+[node name="Player" type="Node2D"]
+
+[node name="PlayerBody" type="KinematicBody2D" parent="."]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="PlayerHitbox" type="CollisionShape2D" parent="PlayerBody"]
+shape = SubResource( 1 )
+
+[node name="PlayerImage" type="Sprite" parent="PlayerBody"]
+texture = ExtResource( 1 )
