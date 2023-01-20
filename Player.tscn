@@ -9,11 +9,7 @@ extents = Vector2( 16, 16 )
 [node name="Player" type="Node2D"]
 
 [node name="PlayerBody" type="KinematicBody2D" parent="."]
-<<<<<<< Updated upstream
 script = ExtResource( 2 )
-=======
-physics_interpolation_mode = 2
->>>>>>> Stashed changes
 __meta__ = {
 "_edit_group_": true
 }
