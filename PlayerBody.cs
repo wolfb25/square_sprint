@@ -12,27 +12,17 @@ public class PlayerBody : KinematicBody2D
         Vector2 force = new Vector2(0, GRAVITY);
         velocity += force * delta;
         velocity = MoveAndSlide(velocity, new Vector2(0, -1));
-        if (started) Position += new Vector2(250 * delta, 0);
-        if (started && space_on && IsOnFloor()) {
+        if (started) velocity.x = 300;
+        if (Input.IsActionJustPressed("space") && IsOnFloor()) {
+            started = true;
             velocity.y = -800;
             MoveAndSlide(velocity, Vector2.Up);
+        } 
+        if (started && !IsOnFloor()) Rotation += 5 * delta;
+        if (started && IsOnFloor()) {
+            if (Rotation > 45) while (Rotation != 90) Rotation += 25 * delta;
+            if (Rotation < 45) while (Rotation != 0) Rotation -= 25 * delta;
         }
-        if (spacestate_prev != spacestate_cur) {
-            if (space_on) space_on = false;
-            else space_on = true;
-        }
-        spacestate_prev = spacestate_cur;
-        GD.Print(space_on);
     }   
-
-    public override void _Input(InputEvent esemeny) {
-        if (esemeny is InputEventKey gomb) {
-            if (gomb.Unicode == 64) { //ezt kell megoldani még
-                if (!started) started = true;
-                spacestate_cur = true;
-            }
-            else spacestate_cur= false;
-        }
-
-    }
 }
+    
