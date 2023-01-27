@@ -17,7 +17,7 @@ public class PlayerBody : KinematicBody2D
             velocity.y = -800;
             MoveAndSlide(velocity, Vector2.Up);
         } 
-        if (started && !IsOnFloor()) Rotation += 5 * delta;
+        if (started && !IsOnFloor() && !IsOnWall()) Rotation += 5 * delta;
         if (started && IsOnFloor()) {
             // if (Rotation >= 45) while (Rotation != 90) Rotation += 25 * delta;
             // if (Rotation < 45) while (Rotation != 0) Rotation -= 25 * delta;

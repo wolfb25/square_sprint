@@ -14,6 +14,5 @@ public class Map : Node2D
     public override void _Process(float delta)
     {
         Cam.Position = new Vector2(Player.Position.x + 512, Cam.Position.y);
-
     }
 }
