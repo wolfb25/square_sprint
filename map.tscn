@@ -74,3 +74,5 @@ tile_data = PoolIntArray( 393244, 1, 0, 393245, 1, 0, 393246, 1, 0, 393247, 1, 0
 [node name="PlayerCamera" type="Camera2D" parent="."]
 position = Vector2( 512, 256 )
 current = true
+
+[connection signal="Bokes" from="SpikeNode" to="." method="_Bokes"]
