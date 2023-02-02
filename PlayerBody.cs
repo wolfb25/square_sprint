@@ -5,19 +5,27 @@ public class PlayerBody : KinematicBody2D
 {
    
     private static readonly float GRAVITY = 3000;
-    private Vector2 velocity = new Vector2(0, 0);
-    private bool started = false;
+    public Vector2 velocity = new Vector2(0, 0);
+    public static bool started = false;
+
+    public override void _Ready()
+    {
+        
+    }
     public override void _PhysicsProcess(float delta) {
-        Vector2 force = new Vector2(0, GRAVITY);
-        velocity += force * delta;
-        velocity = MoveAndSlide(velocity, new Vector2(0, -1));
+        if (!Map.halott) {
+            Vector2 force = new Vector2(0, GRAVITY);
+            velocity += force * delta;
+            velocity = MoveAndSlide(velocity, new Vector2(0, -1));
+        }
+        else velocity = Vector2.Zero;
         if (started) velocity.x = 300;
-        if (Input.IsActionPressed("space") && IsOnFloor()) {
+        if (!Map.halott && Input.IsActionPressed("space") && IsOnFloor()) {
             started = true;
             velocity.y = -800;
             MoveAndSlide(velocity, Vector2.Up);
         } 
-        if (started && !IsOnFloor() && !IsOnWall()) Rotation += 5 * delta;
+        if (!Map.halott && started && !IsOnFloor() && !IsOnWall()) Rotation += 5 * delta;
         if (started && IsOnFloor()) {
             // if (Rotation >= 45) while (Rotation != 90) Rotation += 25 * delta;
             // if (Rotation < 45) while (Rotation != 0) Rotation -= 25 * delta;
