@@ -20,11 +20,7 @@ public class PlayerBody : KinematicBody2D {
             MoveAndSlide(velocity, Vector2.Up);
         } 
         if (!Map.halott && started && !IsOnFloor() && !IsOnWall()) Rotation += 5 * delta;
-        if (started && IsOnFloor()) {
-            // if (Rotation >= 45) while (Rotation != 90) Rotation += 25 * delta;
-            // if (Rotation < 45) while (Rotation != 0) Rotation -= 25 * delta;
-            if (Rotation != 0) Rotation = 0;
-        }
+        if (started && IsOnFloor()) if (Rotation != 0) Rotation = 0;
     }
 	// void Spike_inside()
 	// {
