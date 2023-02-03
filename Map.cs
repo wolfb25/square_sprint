@@ -16,7 +16,7 @@ public class Map : Node2D {
     public override void _Process(float delta) {
         Cam.Position = new Vector2(Player.Position.x + 512, Cam.Position.y);
         if (halott && Input.IsActionJustPressed("respawn")) {
-            GD.Print("apád");
+            // GD.Print("apád");
             halott = false;
             GetTree().ReloadCurrentScene();
             //Player.Position= new Vector2(168, 440);
@@ -26,7 +26,7 @@ public class Map : Node2D {
         // if (PlayerBody.started) Starting.Visible = false; 
     }
     void _Bokes(Node2D valami) {
-            GD.Print("anyá(i)d");
+           // GD.Print("anyá(i)d");
         if (++anyadcounter > 1) { 
             halott = true;
         }

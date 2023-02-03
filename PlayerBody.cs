@@ -1,17 +1,11 @@
 using Godot;
 using System;
 
-public class PlayerBody : KinematicBody2D
-{
+public class PlayerBody : KinematicBody2D {
    
     private static readonly float GRAVITY = 3000;
     public Vector2 velocity = new Vector2(0, 0);
     public static bool started = false;
-
-    public override void _Ready()
-    {
-        
-    }
     public override void _PhysicsProcess(float delta) {
         if (!Map.halott) {
             Vector2 force = new Vector2(0, GRAVITY);
