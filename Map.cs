@@ -7,6 +7,7 @@ public class Map : Node2D {
     Label Ending;
     Label Ponting;
     Label PBing;
+    Node2D Hatter;
     KinematicBody2D Player;
     int anyadcounter = 0;
     float score = 0;
@@ -20,6 +21,7 @@ public class Map : Node2D {
         Starting = (Label)GetNode("StartLabel");
         Ending = (Label)GetNode("EndLabel");
         Ponting = (Label)GetNode("PontLabel");
+        Hatter = (Node2D)GetNode("BackgroundNode");
         // PBing = (Label)GetNode("PBLabel");
     }
 
@@ -29,10 +31,12 @@ public class Map : Node2D {
             Ponting.RectPosition = new Vector2(Ponting.RectPosition.x, 8);
             end = true;
             score = 260;
+            Hatter.Position = new Vector2(Hatter.Position.x, Hatter.Position.y);
         } 
         else {
             Cam.Position = new Vector2(Player.Position.x + 512, Cam.Position.y);
             Ponting.RectPosition = new Vector2(Player.Position.x + 8, 8);
+            Hatter.Position = new Vector2(Player.Position.x * 0.35f, Hatter.Position.y);
         }
         Ending.RectPosition = new Vector2(Player.Position.x - 250, Ending.RectPosition.y);
         if ((halott || end) && Input.IsActionJustPressed("respawn")) {
