@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/tile.png" type="Texture" id=2]
@@ -88,6 +88,10 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 7, 0, 7 )
 size = 35
 font_data = ExtResource( 5 )
 
+[sub_resource type="DynamicFont" id=10]
+size = 56
+font_data = ExtResource( 5 )
+
 [sub_resource type="DynamicFontData" id=7]
 font_path = "res://assets/OXYGENE1.TTF"
 
@@ -132,6 +136,9 @@ tile_data = PoolIntArray( 262227, 1, 0, 262228, 1, 0, 393295, 1, 0, 393296, 1, 0
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 168, 464 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="PlayerCamera" type="Camera2D" parent="."]
 position = Vector2( 512, 256 )
@@ -154,13 +161,22 @@ text = "PRESS SPACE"
 align = 1
 valign = 1
 
+[node name="EndLabel" type="Label" parent="."]
+margin_left = -240.0
+margin_top = 424.0
+margin_right = -27.0
+margin_bottom = 482.0
+rect_pivot_offset = Vector2( 16, 0 )
+custom_fonts/font = SubResource( 10 )
+text = "DI END"
+
 [node name="PontLabel" type="Label" parent="."]
 margin_left = 8.0
 margin_top = 8.0
 margin_right = 48.0
 margin_bottom = 59.0
 custom_fonts/font = SubResource( 8 )
-text = "0"
+text = "0%"
 
 [node name="MovingSpike" parent="." instance=ExtResource( 7 )]
 position = Vector2( 5168, 464 )
