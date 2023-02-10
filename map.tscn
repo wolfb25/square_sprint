@@ -9,6 +9,10 @@
 [ext_resource path="res://MovingSpike.tscn" type="PackedScene" id=7]
 [ext_resource path="res://assets/oneshot_refuge_bg.png" type="Texture" id=8]
 
+[sub_resource type="DynamicFont" id=6]
+size = 35
+font_data = ExtResource( 5 )
+
 [sub_resource type="ConvexPolygonShape2D" id=4]
 points = PoolVector2Array( 16, 1.5625, 31.3448, 32, 0.709396, 32 )
 
@@ -85,10 +89,6 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 7, 0, 7 )
 } ]
 1/z_index = 0
 
-[sub_resource type="DynamicFont" id=6]
-size = 35
-font_data = ExtResource( 5 )
-
 [sub_resource type="DynamicFont" id=10]
 size = 56
 font_data = ExtResource( 5 )
@@ -122,9 +122,6 @@ script = ExtResource( 3 )
 
 [node name="BackgroundNode" type="Node2D" parent="."]
 position = Vector2( -0.00012207, 0 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="Background" type="Sprite" parent="BackgroundNode"]
 position = Vector2( 1706.67, 256 )
@@ -135,6 +132,28 @@ texture = ExtResource( 8 )
 position = Vector2( 5056, 256 )
 scale = Vector2( 5.33333, 5.33333 )
 texture = ExtResource( 8 )
+
+[node name="StartLabel" type="Label" parent="BackgroundNode"]
+margin_left = 536.0
+margin_top = 104.0
+margin_right = 773.0
+margin_bottom = 140.0
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 6 )
+text = "PRESS SPACE"
+align = 1
+valign = 1
+
+[node name="StartLabel2" type="Label" parent="BackgroundNode"]
+margin_left = 1040.0
+margin_top = 104.0
+margin_right = 1304.0
+margin_bottom = 140.0
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 6 )
+text = "R TO RESTART"
+align = 1
+valign = 1
 
 [node name="Bokoarea" type="Area2D" parent="."]
 
@@ -165,15 +184,6 @@ margin_right = 672.0
 margin_bottom = 446.0
 rect_rotation = -90.0
 text = "<<<<"
-
-[node name="StartLabel" type="Label" parent="."]
-margin_right = 1024.0
-margin_bottom = 512.0
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 6 )
-text = "PRESS SPACE"
-align = 1
-valign = 1
 
 [node name="EndLabel" type="Label" parent="."]
 margin_left = -240.0
