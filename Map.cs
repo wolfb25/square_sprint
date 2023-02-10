@@ -3,8 +3,9 @@ using System;
 
 public class Map : Node2D {
     Camera2D Cam;
-    Label Starting, Ending, Ponting;
+    Label Ending, Ponting;
     Node2D Hatter;
+    [Export] PackedScene Explo;
     KinematicBody2D Player;
 	public static bool started = false;
     readonly int ENDSCORE = 260;
@@ -15,7 +16,6 @@ public class Map : Node2D {
     public override void _Ready() {
         Cam = (Camera2D)GetNode("PlayerCamera");
         Player = (KinematicBody2D)GetNode("Player/PlayerBody");
-        Starting = (Label)GetNode("StartLabel");
         Ending = (Label)GetNode("EndLabel");
         Ponting = (Label)GetNode("PontLabel");
         Hatter = (Node2D)GetNode("BackgroundNode");
@@ -45,5 +45,11 @@ public class Map : Node2D {
             score += 15 * delta;
         }
     }
-    void _Bokes(Node2D valami) { if (++got_hit > 1) halott = true; }
+    void _Bokes(Node2D valami) { 
+        if (++got_hit > 1) {
+            halott = true;
+            var expeff = (Node2D)Explo.Instance();
+            expeff.Position = Player.Position;
+        } 
+    }
 }
