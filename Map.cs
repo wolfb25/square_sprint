@@ -44,13 +44,16 @@ public class Map : Node2D {
             Ponting.Text = Math.Round(score/ENDSCORE*100).ToString() + "%";
             score += 15 * delta;
         }
+        // GD.Print(Player.GlobalPosition); 
     }
     void _Bokes(Node2D valami) { 
         if (++got_hit > 1) {
-            halott = true;
-            var expeff = (Node2D)Explo.Instance();
+            Particles2D expeff = (Particles2D)Explo.Instance();
+            expeff.Position = new Vector2(Player.GlobalPosition.x, Player.GlobalPosition.y);
             AddChild(expeff);
-            expeff.Position = Player.Position;
+            GD.Print(expeff.Position, Player.Position);
+            Player.Visible = false;
+            halott = true;
         } 
     }
 }

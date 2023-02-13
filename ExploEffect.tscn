@@ -1,4 +1,6 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://ExploEffect.cs" type="Script" id=1]
 
 [sub_resource type="Gradient" id=1]
 offsets = PoolRealArray( 0, 0.083871, 0.412903, 1 )
@@ -18,20 +20,23 @@ emission_shape = 1
 emission_sphere_radius = 1.0
 flag_disable_z = true
 direction = Vector3( 0, -5, 0 )
-spread = 75.29
+spread = 180.0
 gravity = Vector3( 0, 98, 0 )
-initial_velocity = 99.01
+initial_velocity = 514.49
 initial_velocity_random = 1.0
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
-scale = 2.0
+scale = 10.0
 scale_random = 1.0
 scale_curve = SubResource( 4 )
 color = Color( 0.933333, 0.776471, 0.054902, 1 )
 color_ramp = SubResource( 2 )
 
 [node name="ExploEffect" type="Particles2D"]
-amount = 20
-lifetime = 1.25
+emitting = false
+amount = 150
+lifetime = 0.6
+one_shot = true
 explosiveness = 1.0
 process_material = SubResource( 5 )
+script = ExtResource( 1 )
