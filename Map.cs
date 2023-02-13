@@ -49,6 +49,7 @@ public class Map : Node2D {
         if (++got_hit > 1) {
             halott = true;
             var expeff = (Node2D)Explo.Instance();
+            AddChild(expeff);
             expeff.Position = Player.Position;
         } 
     }
